@@ -32,13 +32,13 @@ function AppRouter() {
             }
         })
     }, [])
-    
-    return (
+
+    return ( !User ? null :
         <Router basename="/rs-client/">
             <RsHeader {...User}/>
             <Switch>
                 <Route exact path="/free" render={() => <FreePage/>}/>
-                {!User?.isAuth ? 
+                {!User.isAuth ? 
                     <Route exact path="/" render={() => <LoginPage/>}/> :
                     <Route exact path="/" render={() => <MainPage {...User}/>}/>
                 }
