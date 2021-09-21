@@ -4,6 +4,7 @@ import { getAPI } from "../util/Apis";
 const NaverLogin = styled.img`
     cursor: pointer;
     width: 250px;
+    margin: 20px;
 `
 
 export const NaverLoginButton = ({dark}: DarkProps) => {

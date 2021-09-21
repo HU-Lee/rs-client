@@ -1,7 +1,7 @@
 import { Wrapper } from "../atoms/container"
 import { LogoImage } from "../molecules/LogoImage"
 
-const MainPage = ({role, name}: UserInfo) => {
+const MainPage: React.FC<UserInfo> = ({role, name}) => {
     return (
         <Wrapper flex="column">
             <LogoImage/>

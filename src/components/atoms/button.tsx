@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ifProp, prop, withProp } from "styled-tools";
 
 interface ButtonProps {
@@ -9,7 +9,7 @@ interface ButtonProps {
     round?: boolean,
 }
 
-export const Button = styled.button<ButtonProps>`
+const baseStyle = css`
     all: unset;
     cursor: pointer;
 
@@ -21,7 +21,7 @@ export const Button = styled.button<ButtonProps>`
     box-sizing: border-box;
 
     color: ${prop("base", "black")};
-    
+
     margin: 5px;
     transition: 0.5s all;
 
@@ -32,6 +32,10 @@ export const Button = styled.button<ButtonProps>`
         background-color: ${prop("base", "black")};
         color: ${prop("sub", "white")};
     }
+`
+
+export const Button = styled.button<ButtonProps>`
+    ${baseStyle}
 `
 
 // 테마 변경용 토글 버튼
